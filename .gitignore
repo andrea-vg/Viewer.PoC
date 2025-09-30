@@ -1,0 +1,36 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+**/bin/
+**/obj/
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Resharper
+_ReSharper*/
+
+# Test results
+TestResults/
+*.trx
+
+# Rider and VS settings
+*.DotSettings.user
+
+# Others
+*.log
+*.sqlite
+*.db
+.vscode/

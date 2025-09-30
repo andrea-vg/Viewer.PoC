@@ -1,0 +1,39 @@
+﻿<Window x:Class="Viewer.PoC.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Viewer.PoC.UI"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:behaviors="clr-namespace:Viewer.PoC.UI.Behaviors"
+        mc:Ignorable="d"
+        Title="Viewer - Proof of Concept" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Button Content="Load File" Command="{Binding LoadFileCommand}" Margin="0,0,10,0"/>
+            <Button Content="Cancel" Command="{Binding CancelCommand}" Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding Status}" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10">
+            <TextBlock Text="Selected Shape:" FontWeight="Bold" Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding SelectionVM.Current.ShapeType}" Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding SelectionVM.Current.Color}" Margin="0,0,10,0"/>
+        </StackPanel>
+        <ItemsControl Grid.Row="2" ItemsSource="{Binding VisualElements}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas>
+                        <i:Interaction.Behaviors>
+                            <behaviors:CanvasSizeBehavior CanvasSizeChangedCommand="{Binding CanvasSizeChangedCommand}" />
+                        </i:Interaction.Behaviors>
+                    </Canvas>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </Grid>
+</Window>

@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Viewer.PoC.Core\Viewer.PoC.Core.csproj" />
+	  <ProjectReference Include="..\Viewer.PoC.ViewModel\Viewer.PoC.Model.csproj" />
+	</ItemGroup>
+
+</Project>

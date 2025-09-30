@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+	  <LangVersion>8.0</LangVersion>
+    <RootNamespace>Viewer.PoC.UI</RootNamespace>
+    <AssemblyName>Viewer.PoC.UI</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <!-- Add other NuGet packages here as needed -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Viewer.PoC.Core\Viewer.PoC.Core.csproj" />
+    <ProjectReference Include="..\Viewer.PoC.Model\Viewer.PoC.ViewModel.csproj" />
+    <ProjectReference Include="..\Viewer.PoC.ViewModel\Viewer.PoC.Model.csproj" />
+  </ItemGroup>
+</Project>
